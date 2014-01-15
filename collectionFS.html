@@ -1,0 +1,30 @@
+<head>
+  <title>collectionFS</title>
+</head>
+
+<body>
+  {{> hello}}
+</body>
+
+<template name="hello">
+  <h1>Hello World!!</h1>
+  {{greeting}}<br/>
+  <input name="files" id="files" type="file" multiple/><br/>
+  <br/>
+  <div id="dropzone" class="dropzone">
+    <div style="text-align: center; color: gray;">Drop file to upload</div>
+  </div>
+  <br/>
+  {{#each images}}
+  <input type="button" value="remove" class="btnRemove"/>
+  <img height="20px" src="{{url}}"> {{name}} - {{bytesUploaded}} of {{size}} bytes<br/>
+  {{else}}
+  No images
+  {{/each}}
+  <br/>
+  {{#with test}}
+  {{text}}
+  {{else}}
+  No record found
+  {{/with}}
+</template>
